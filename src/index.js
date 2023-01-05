@@ -4,11 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { TransactionsProvider } from "./context/TransactionContext";
-ReactDOM.render(
-    <TransactionsProvider>
-    <App />
-    </TransactionsProvider>,
-  document.getElementById('root')
+import { HashRouter as Router } from "react-router-dom";
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(
+    <Router>
+      <TransactionsProvider>
+      <App />
+      </TransactionsProvider>,
+    </Router>
 );
 
 // If you want to start measuring performance in your app, pass a function
